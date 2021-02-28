@@ -1,0 +1,52 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+if_up_strictness link
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+format_human_readable
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=9
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window  true
+own_window_transparent  false
+own_window_argb_visual  true
+own_window_argb_value  1000
+own_window_type  desktop
+
+
+
+alignment top_left
+gap_x 1325
+gap_y 220
+minimum_size 300 621
+#maximum_size 1902 1080
+
+
+
+
+TEXT
+##############
+# - SYSTEM - #
+##############
+
+
+${execi 30 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/Switch_pic.py}
+#${background execpi 18000 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/Nature}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Nature/000.png  -p -43,0 -s 400x640 -f 20 }

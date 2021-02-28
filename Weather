@@ -1,0 +1,72 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+if_up_strictness link
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+format_human_readable
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=9
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 200
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_left
+gap_x 0
+gap_y 0
+minimum_size 1902 1080
+maximum_size 1902 1080
+
+
+default_bar_size 200 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color cccccc
+
+color0 white
+color1 1E90FF
+color2 white
+color3 0084C8
+
+TEXT
+##############
+# - SYSTEM - #
+##############
+# |--Weather
+${voffset 0}
+${execi 600 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/Weather changsha}
+# Tm
+${voffset 650}${goto 1670}${font HOOGE 05_53:style=Bold:size=25}${color white}${execi 20 head -n 1 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp}°C${color}${font}
+${voffset 0}${goto 1667} ${font Unifont:size=8}${execi 20 head -n 3 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp| tail -n 1}  ${goto 1715} ${font Unifont:size=8}${execi 20 head -n 4 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp| tail -n 1}${color}${font}
+${voffset 0}${goto 1667} ${font Unifont:size=10}${execi 20 head -n 2 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp| tail -n 1}${color}${font}
+${voffset 5}${goto 1667} ${font Unifont:size=11}${execi 20 head -n 5 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp| tail -n 1}${color}${font}
+${voffset 0}${goto 1667} ${font Unifont:size=11}${execi 20 head -n 6 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp| tail -n 1}${color}${font}
+${voffset 0}${goto 1667} ${font Unifont:size=11}${execi 20 head -n 7 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp| tail -n 1}${color}${font}
+${voffset 4}${goto 1667} ${font Unifont:size=12}${color white}${execi 20 head -n 9 /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.tmp| tail -n 1}${color}${font}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/RADAR.png -p 1640,640 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/scrpt/.Now.png -p 1770,680 -s 50x50 }

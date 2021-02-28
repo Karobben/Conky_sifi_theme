@@ -1,0 +1,177 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+if_up_strictness link
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+format_human_readable
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=9
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 200
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_left
+gap_x 0
+gap_y 0
+minimum_size 1902 1080
+maximum_size 1902 1080
+
+
+default_bar_size 200 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color cccccc
+
+color0 white
+color1 1E90FF
+color2 white
+color3 0084C8
+
+TEXT
+##############
+# - SYSTEM - #
+##############
+# |--CPU1
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 0,0 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 225,0 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,60 }
+# CPU tag
+${voffset 1}${voffset -48}${goto 8}${cpugraph cpu1 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 250} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 1
+${goto 250} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu1} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 248} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 0' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 8}${cpubar cpu1 7,216}
+
+# |--CPU2
+${voffset -1}${voffset 20}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 0,107 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 225,107 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,167 }
+# CPU tag
+${voffset -48}${goto 8}${cpugraph cpu2 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 250} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 2
+${goto 250} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu2} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 248} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 1' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 8}${cpubar cpu2 7,216}
+
+# |--CPU3
+${voffset 20}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 0,214 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 225,214 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,274 }
+# CPU tag
+${voffset -48}${goto 8}${cpugraph cpu3 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 250} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 3
+${goto 250} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu3} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 248} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 2' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 8}${cpubar cpu3 7,216}
+
+# |--CPU4
+${voffset 20}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 0,321 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 225,321 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,381 }
+# CPU tag
+${voffset -48}${goto 8}${cpugraph cpu4 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 250} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 4
+${goto 250} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu4} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 248} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 3' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 8}${cpubar cpu4 7,216}
+
+# |--CPU5
+${voffset -409}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 350,0 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 575,0 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,61 }
+# CPU tag
+${voffset -48}${goto 358}${cpugraph cpu5 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 5
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu5} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 598} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 0' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 358}${cpubar cpu5 7,216}
+
+# |--CPU6
+${voffset 20}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 350,107 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 575,107 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,168 }
+# CPU tag
+${voffset -48}${goto 358}${cpugraph cpu6 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 6
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu6} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 598} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 1' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 358}${cpubar cpu6 7,216}
+
+# |--CPU7
+${voffset 20}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 350,214 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 575,214 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,275 }
+# CPU tag
+${voffset -48}${goto 358}${cpugraph cpu7 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 7
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu7} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 598} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 2' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 358}${cpubar cpu7 7,216}
+
+# |--CPU8
+${voffset 20}
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INTERFACE.png -p 350,321 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_INFO_PANEL.png -p 575,321 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,382 }
+# CPU tag
+${voffset -48}${goto 358}${cpugraph cpu8 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -56}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 8
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu8} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 2}${goto 598} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${execi 30 sensors | grep 'Core 3' | awk '{print $3}' | sed 's/+//'| sed 's/.0.*//' }°C
+# CPU bar
+${voffset 2}${goto 358}${cpubar cpu8 7,216}

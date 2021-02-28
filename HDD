@@ -1,0 +1,100 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+if_up_strictness link
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+format_human_readable
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=9
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 200
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_left
+gap_x 0
+gap_y 0
+minimum_size 1902 1080
+maximum_size 1902 1080
+
+
+default_bar_size 200 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color cccccc
+
+color0 white
+color1 1E90FF
+color2 white
+color3 0084C8
+
+TEXT
+##############
+# - SYSTEM - #
+##############
+# |--HD
+${voffset 204}
+
+# |--HDTEMP1
+# Root
+${voffset 4}${goto 1730}${font HOOGE 05_53:style=Bold:size=11}${color salmon}${execi 120 hddtemp /dev/sda -n --unit=C}°C${color}${font}
+# Tag
+${voffset -14}${goto 1820}${font HOOGE 05_53:style=Bold:size=9}${color white}Root
+# Used rate
+${voffset 2}${goto 1738}${font HOOGE 05_53:style=Bold:size=9}${color white}${color salmon}${fs_used_perc /}%${color}${font}
+# F & U
+${voffset -13}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}F: ${color salmon}${fs_free /}${color}${font}
+${voffset -5}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}U: ${color salmon}${fs_used /}${color}${font}
+# Bar
+${voffset 28}${goto 1647}${color0}${fs_bar 32,192 /}${color}${offset 10}
+# More
+${voffset 22}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color2}${fs_type /}${color}${font}${color}${font}
+${voffset -3}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color2}Size:${fs_size /}${color}${font}${color}${font}
+
+# |--HDTEMP2
+# Tmp Date
+${voffset 19}${goto 1730}${font HOOGE 05_53:style=Bold:size=11}${color salmon}${execi 120 hddtemp /dev/sda2 -n --unit=C}°C${color}${font}
+# Tag
+${voffset -14}${goto 1820}${font HOOGE 05_53:style=Bold:size=9}${color white}Data
+# Used rate
+${voffset 2}${goto 1738}${font HOOGE 05_53:style=Bold:size=9}${color white}${color salmon}${fs_used_perc /media/ken/Data}%${color}${font}
+# F & U
+${voffset -13}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}F: ${color salmon}${fs_free /media/ken/Data}${color}${font}
+${voffset -5}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}U: ${color salmon}${fs_used /media/ken/Data}${color}${font}
+# Bar
+${voffset 28}${goto 1647}${color0}${fs_bar 32,192 /media/ken/Data}${color}${offset 10}
+# More
+${voffset 22}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color2}${fs_type /media/ken/Data}${color}${font}${color}${font}
+${voffset -3}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color2}Size:${fs_size /media/ken/Data}${color}${font}${color}${font}
+
+
+
+
+
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/HDD2.png -p 1630,225 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/HDD2.png -p 1630,430 }

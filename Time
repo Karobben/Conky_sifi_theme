@@ -1,0 +1,75 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+if_up_strictness link
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+format_human_readable
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=9
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 200
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_left
+gap_x 0
+gap_y 0
+minimum_size 1902 1080
+maximum_size 1902 1080
+
+
+default_bar_size 200 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color cccccc
+
+color0 white
+color1 1E90FF
+color2 white
+color3 0084C8
+
+TEXT
+##############
+# - SYSTEM - #
+##############
+# |-- Time & Processes
+
+${voffset 103}
+${font Digital Readout Thick Upright:size=40}${goto 750}${color2}${time %k}${voffset -9}:${voffset 9}${time %M}${color2}${voffset -14}${font Digital Readout Thick Upright:size=24}${goto 855}${color2}${time %d}${font Digital Readout Thick Upright:size=12}${voffset 14}${goto 855}${color2}${time %m}${goto 869}${color2}${time %y}${font}
+${voffset -108}${goto 1250}${voffset -10}Processes: ${color2}${goto 1330} CPU${goto 1370  }RAM${goto 1420 }PID${goto 1470 }USER${color}
+${voffset -1}${goto 1250}${color2}${top name 1}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 1}${goto 1370 }${top mem 1}${goto 1420 }${top pid 1}${goto 1470 }${top user 1}${color}${font}
+${voffset -1}${goto 1250}${color2}${top name 2}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 2}${goto 1370  }${top mem 2}${goto 1420 }${top pid 2}${goto 1470 }${top user 2}${color}${font}
+${voffset -1}${goto 1250}${color2}${top name 3}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 3}${goto 1370  }${top mem 3}${goto 1420 }${top pid 3}${goto 1470 }${top user 3}${color}${font}
+${voffset -1}${goto 1250}${color2}${top name 4}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 4}${goto 1370  }${top mem 4}${goto 1420 }${top pid 4}${goto 1470 }${top user 4}${color}${font}
+${voffset -1}${goto 1250}${color2}${top name 5}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 5}${goto 1370  }${top mem 5}${goto 1420 }${top pid 5}${goto 1470 }${top user 5}${color}${font}
+${voffset -1}${goto 1250}${color2}${top name 6}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 6}${goto 1370  }${top mem 6}${goto 1420 }${top pid 6}${goto 1470 }${top user 6}${color}${font}
+${voffset -1}${goto 1250}${color2}${top name 7}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 7}${goto 1370  }${top mem 7}${goto 1420 }${top pid 7}${goto 1470 }${top user 7}${color}${font}
+
+
+
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/ZONES.png -p 960,0 }

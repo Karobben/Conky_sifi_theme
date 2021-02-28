@@ -1,0 +1,85 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+if_up_strictness link
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+format_human_readable
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=9
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 200
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_left
+gap_x 0
+gap_y 0
+minimum_size 1902 1080
+maximum_size 1902 1080
+
+
+default_bar_size 200 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color cccccc
+
+color0 white
+color1 1E90FF
+color2 white
+color3 0084C8
+
+TEXT
+##############
+# - SYSTEM - #
+##############
+# |--GPU
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/GPU.png -p 710,0 }
+${voffset -20}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}Ver: ${goto 785}${exec nvidia-settings -q [gpu:0]/NvidiaDriverVersion -t}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}Tm: ${goto 785}${color 993333}${nvidia temp}°C${color}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}G.freq: ${goto 785}${nvidia gpufreq}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}M.freq: ${goto 785}${nvidia memfreq}
+${voffset -60}
+${goto 820}${color 008800}${font ConkyColorsLogos:size=40}n${font}${color}
+
+
+
+
+
+
+
+
+
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/ZONES.png -p 960,0 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/OVERALL_INTERFACE.png -p 1530,0 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/HDD.png -p 1630,225 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/HDD.png -p 1630,430 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/RADAR.png -p 1640,640 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/NETWORK_INFO.png -p 1195,885 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/NETWORK2.png -p 1195,955 }
+${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/NETWORK2.png -p 1195,1020 }

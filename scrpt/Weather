@@ -1,0 +1,35 @@
+#!/bin/bash
+# By ken
+
+SCRIPT=/home/ken/Desktop/BlueVision/Blue_conky/scrpt
+
+
+Web=$(curl -s --connect-timeout 30 "https://tianqi.moji.com/weather/china/hunan/$1")
+# Tmp Now
+echo $Web| tr "<" "\n"| grep --colour=never  -A 1 "wea_weather"| sed 's/em>//;/>/d' > $SCRIPT/.tmp
+
+# update infor
+echo $Web| tr ">" "\n"| grep -A 1  --colour=never "info_uptime"| tail -n 1| awk -F"<" '{print $1}' >> $SCRIPT/.tmp
+# Other
+echo $Web| tr ">" "\n"| grep -A 4  --colour=never "wea_about clearfix"| grep --colour=never  "</"| awk -F"<" '{print $1}' >> $SCRIPT/.tmp
+# png
+wget  $(echo $Web| tr "<" "\n"| grep --colour=never  -A 4 "wea_weather"| grep --colour=never img| awk -F\" '{print $2}') -O $SCRIPT/.Now.png
+
+#Date
+echo $Web| tr ">" "\n"| grep  --colour=never -A 16 "days clearfix"| grep --colour=never "</a"| awk -F"<" '{print $1}' > $SCRIPT/.tmp1
+
+# Discrib
+#echo $Web| tr ">" "\n"| grep  --colour=never -A 16 "days clearfix"| grep --colour=never "</li" | sed 's/ //g;s/<\/li//;/^$/d'| grep --colour=never -B 1 \/| grep --colour=never -v [-/] > .tmp2
+echo $Web| tr ">" "\n"| grep  --colour=never -A 7 "days clearfix"| grep alt| awk -F\" '{print $4}' > $SCRIPT/.tmp2
+
+#TM
+echo $Web| tr ">" "\n"| grep  --colour=never -A 16 "days clearfix"| grep --colour=never "</li"| sed '/ </d;s/ //g' | awk -F"<" '{print $1}' > $SCRIPT/.tmp3
+
+# Wind
+echo $Web| tr ">" "\n"| grep  --colour=never -A 16 "days clearfix"| grep --colour=never "</em"| awk -F"<" '{print $1}' > $SCRIPT/.tmp4
+echo $Web| tr ">" "\n"| grep  --colour=never -A 16 "days clearfix"| grep --colour=never "</b"| awk -F"<" '{print $1}' > $SCRIPT/.tmp5
+
+paste -d" " $SCRIPT/.tmp1 $SCRIPT/.tmp2 $SCRIPT/.tmp3 $SCRIPT/.tmp4 $SCRIPT/.tmp5 >> $SCRIPT/.tmp
+
+# Tips
+echo $Web | tr ">" "\n"| grep -A 4 "wea_tips clearfix"| tail -n 1|awk -F"<" '{print $1}' >> $SCRIPT/.tmp

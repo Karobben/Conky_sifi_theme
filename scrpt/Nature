@@ -1,0 +1,7 @@
+#!/bin/bash
+# By ken
+
+SCRIPT=/home/ken/Desktop/BlueVision/Blue_conky/scrpt
+
+nohup python3 $SCRIPT/Nature_News.py & > $SCRIPT/.log
+echo done
