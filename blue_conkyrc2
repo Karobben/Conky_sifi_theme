@@ -60,23 +60,82 @@ TEXT
 # - SYSTEM - #
 ##############
 # |--BATTERY
-${voffset 845}
-${goto 1201}${if_existing /sys/class/power_supply/BAT0}${color0}${font ConkyColors:size=15}6${font}${color} ${voffset -6}Battery: ${font Liberation Sans:style=Bold:size=8}${color1}${battery_percent BAT0}%${color}${font}
-${voffset -14}${goto 1320}${color 99CCFF}${battery_bar 12,594}
+${voffset 194}
+#${goto 1201}${if_existing /sys/class/power_supply/BAT0}${color0}${font ConkyColors:size=15}6${font}${color} ${voffset -6}Battery: ${font Liberation Sans:style=Bold:size=8}${color1}${battery_percent BAT0}%${color}${font}
+#${voffset -14}${goto 1320}${color 99CCFF}${battery_bar 12,594}
+
+# |-- disks
+${font HOOGE 05_53:style=Bold:size=9}
+${voffset 0  }${goto 1730}${color white}${diskio_read  /dev/nvme0n1p5}
+${voffset -2 }${goto 1740}${color white}${diskio_write /dev/nvme0n1p5}
+${voffset 92}${goto 1647}${color white}${diskiograph_read  /dev/nvme0n1p5 15,103 white}
+${voffset 0 }${goto 1647}${color white}${diskiograph_write /dev/nvme0n1p5 15,103 white}
+
+${voffset 39}${goto 1730}${color white}${diskio_read  /dev/sda2}
+${voffset -1}${goto 1740}${color white}${diskio_write /dev/sda2}
+${voffset 92}${goto 1647}${color white}${diskiograph_read  /dev/sda2 15,103 white}
+${voffset 0 }${goto 1647}${color white}${diskiograph_write /dev/sda2 15,103 white}
 
 # |--NetWork
+#${voffset 1}${voffset -48}${goto 8}${nvidiabar  50,216  gpufreqmin 1E90FF 0084C8}${color}
+${voffset 231}
 
-${voffset 32}
-${goto 1201}${color #0077ff}${upspeedgraph wlp4s0 48,605 104E8B 0077ff}
-${voffset 3 }${goto 1201}${color #0077ff}${downspeedgraph wlp4s0 48,605 104E8B 0077ff}
+${voffset 0 }${goto 1210}${color black}${font HOOGE 05_53:style=Bold:size=9}IP: ${execi 30 ifconfig| grep -A 1 wlp| grep inet| awk '{print $2}'}
+${voffset 28}${goto 1201}${color #0077ff}${upspeedgraph eno2 48,605 104E8B 0077ff}
+${voffset -1 }${goto 1201}${color #0077ff}${downspeedgraph eno2 48,605 104E8B 0077ff}
 ${voffset -119 }${goto 1818}${color0}${font HOOGE 05_53:style=Bold:size=9}Up:
-${goto 1818}$color${font HOOGE 05_53:style=Bold:size=9}${upspeed wlp4s0}
-${voffset 32 }
-${goto 1818}${color0}${font HOOGE 05_53:style=Bold:size=9}Down:$color
-${goto 1818}${font HOOGE 05_53:style=Bold:size=9}${downspeed  wlp4s0}
+${goto 1818}$color${font HOOGE 05_53:style=Bold:size=9}${upspeed eno2}
+${goto 1818}$color${totalup eno2} 
+${voffset 2}
+${goto 1818}${color0}Down:$color
+${goto 1818}${downspeed  eno2}
+${goto 1818}$color${totaldown eno2}
+
+##########
+## Nvidia
+##########
+
+#${voffset 1}${voffset -48}${goto 8}${nvidiabar 50,216 gpuutil 0}${color}
+
+${voffset -356}
+
+${voffset 0  }${goto 716}${color #0077ff}${nvidiagraph gpuutil 32,320 0}
+${voffset -12}${goto 716}${color #0077ff}${nvidiagraph memutil 32,320 0}
+${voffset -12}${goto 716}${color #0077ff}${nvidiagraph gpuutil 32,320 1}
+${voffset -12}${goto 716}${color #0077ff}${nvidiagraph memutil 32,320 1}
+${voffset -145}${goto 720}${color white}${nvidia modelname} GPU1                 UTIL
+${voffset 20}${goto 720}${color white}MEM: ${nvidia memfree 0}/${nvidia memmax 0}MiB
+${voffset 20}${goto 720}${color white}${nvidia modelname} GPU2                 UTIL
+${voffset 20}${goto 720}${color white}MEM: ${nvidia memfree 1}/${nvidia memmax 1}MiB
+# tmp and fan
+${voffset -137}
+${voffset 23}${goto 1093}${color white}TMP: ${color salmon}${nvidia gputemp 0}°C
+${voffset 0 }${goto 1093}${color white}FRQ: ${nvidia gpufreqcur 0}
+${voffset 7 }${goto 1093}${color white}TMP: ${color salmon}${nvidia gputemp 1}°C
+${voffset 0 }${goto 1093}${color white}FRQ: ${nvidia gpufreqcur 1}
+
+${voffset -10}${goto 1093}${color white}FRQ MAX:
+${voffset 0 }${goto 1140}${color white}${nvidia gpufreqmax 0}
+#${voffset -145}${goto 720}${color white}${nvidia modelname}0
 
 
 
-${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/NETWORK_INFO.png -p 1195,885 }
-${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/NETWORK2.png -p 1195,955 }
-${image  /home/ken/Desktop/BlueVision/Blue_conky/Resorse/NETWORK2.png -p 1195,1020 }
+
+
+
+
+
+
+
+
+
+
+
+
+${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK_INFO.png -p 1195,845 }
+${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,915 }
+${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,977 }
+
+
+${image  /home/yiran/Github/Conky_sifi_theme/Resorse/GPU.png -p 705,730 -s 480x320}
+${image  /home/yiran/Github/Conky_sifi_theme/Resorse/Nvidia2.png -p 1105,735 -s 40x25}
