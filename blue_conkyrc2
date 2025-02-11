@@ -1,10 +1,10 @@
 ######################
 # - Conky settings - #
 ######################
-update_interval 1
+update_interval 2
 total_run_times 0
-net_avg_samples 1
-cpu_avg_samples 1
+net_avg_samples 2
+cpu_avg_samples 32
 if_up_strictness link
 
 imlib_cache_size 0
@@ -32,16 +32,12 @@ own_window_argb_visual yes
 own_window_argb_value 200
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-
-
 alignment top_left
 gap_x 0
 gap_y 0
 minimum_size 1902 1080
 maximum_size 1902 1080
-
-
-default_bar_size 200 8
+#default_bar_size 200 8
 
 #########################
 # - Graphics settings - #
@@ -52,37 +48,201 @@ default_color cccccc
 
 color0 white
 color1 1E90FF
-color2 white
+color2 salmon 
 color3 0084C8
 
 TEXT
 ##############
 # - SYSTEM - #
 ##############
-# |--BATTERY
-${voffset 194}
-#${goto 1201}${if_existing /sys/class/power_supply/BAT0}${color0}${font ConkyColors:size=15}6${font}${color} ${voffset -6}Battery: ${font Liberation Sans:style=Bold:size=8}${color1}${battery_percent BAT0}%${color}${font}
-#${voffset -14}${goto 1320}${color 99CCFF}${battery_bar 12,594}
+
+# |--CPU1
+${voffset 14}
+# # CPU tag
+${voffset 2}${voffset -48}${goto 8}${cpugraph cpu1 50,216 1E90FF 0084C8}${color}
+# # CPU usage
+${voffset -60}${goto 250} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 1
+${goto 250} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu1} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 0}${goto 248} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${hwmon 4 temp 1}°C
+
+# |--CPU2
+${voffset 63}
+# CPU tag
+${voffset -47}${goto 8}${cpugraph cpu2 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -61}${goto 250} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 2
+${goto 250} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu2} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 0}${goto 248} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${hwmon 4 temp 2}°C
+
+# |--CPU3
+${voffset 63}
+# CPU tag
+${voffset -47}${goto 8}${cpugraph cpu3 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -62}${goto 250} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 3
+${goto 250} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu3} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 0}${goto 248} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${hwmon 4 temp 6}°C
+
+# |--CPU All
+${voffset 63}
+# CPU tag
+${voffset -48}${goto 10}${cpugraph 50,564 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -61}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 0}${goto 600} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${hwmon 0 temp 1}°C
+
+# |--CPU4
+${voffset -363}
+# CPU tag
+${voffset -48}${goto 358}${cpugraph cpu4 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -63}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 4
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu5} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 0}${goto 598} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${hwmon 4 temp 10}°C
+
+# |--CPU6
+${voffset 64}
+# CPU tag
+${voffset -48}${goto 358}${cpugraph cpu6 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -60}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 6
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu6} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 0}${goto 598} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${hwmon 4 temp 14}°C
+
+# |--CPU7
+${voffset 64}
+# CPU tag
+${voffset -48}${goto 358}${cpugraph cpu7 50,216 1E90FF 0084C8}${color}
+# CPU usage
+${voffset -62}${goto 600} ${font HOOGE 05_53:style=Bold:size=9}${color0 white}CPU 7
+${goto 600} ${font Digital Readout Thick Upright:style=Bold:size=16}${color0}${cpu cpu7} ${font HOOGE 05_53:style=Bold:size=9}%
+# CPU Tem
+${voffset 0}${goto 598} ${font HOOGE 05_53:style=Bold:size=10}${color salmon}TEMP ${color white}${hwmon 4 temp 18}°C
+
+
+################
+# |--RAM
+################
+${voffset 93}
+
+  # RAM graph
+  ${goto 8}${memgraph 95,326}
+
+#RAM Tag,Usage
+${voffset -129}
+ ${color0}${font ConkyColors:size=15}${font}${color white}${goto 30}${voffset -6} ${font HOOGE 05_53:style=Bold:size=9}RAM:${goto 78}${color white}$memperc%${color0}  ${goto 120}F: ${color white}${memeasyfree}  ${goto 200}${color0}U: ${color white}${mem}${color}
+  # |--SWAP
+${goto 10}${color0}${font ConkyColors:size=15}${font}${voffset -6}${goto 32}${font HOOGE 05_53:style=Bold:size=9}SWAP:${goto 78}${color white}${swapperc}%${color0}     ${goto 120}F: ${color white}$swapmax        ${goto 200}${color0}U: ${color white}$swap${color}${font}
+##############
+#RAM bar
+
+${voffset -57}${goto 406}${color white}${membar 10,97}
+${voffset 1}${goto 406}${color white}${swapbar 10,97}
+
+# |--infor board1
+${voffset 110}
+
+${color CCFFCC}${font Liberation Sans:style=Bold:size=11}
+${execpi 5 cat /home/yiran/Github/Conky_sifi_theme/File1.txt | fold -w 83 | sed 's/\[ \]/\[     \]/' | sed 's/\[X\]/\[ X \]/' | sed 's/\] /\] ${color white}/' | sed 's/$/${color }/' | sed 's/^/${goto 55}${voffset 4}/'| head -n $(echo $(date "+%M")+9|bc)| tail -n 9}
+
+
+# |--GPU
+
+${voffset -835}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}Ver: ${goto 785}${exec nvidia-settings -q [gpu:0]/NvidiaDriverVersion -t}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}Tm: ${goto 785}${color 993333}${nvidia temp}°C${color}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}G.freq: ${goto 785}${nvidia gpufreq}
+${goto 725}${font HOOGE 05_53:style=Bold:size=9}${color black}M.freq: ${goto 785}${nvidia memfreq}
+${voffset -60}
+
+
+
+
+
+# # |-- Time & Processes
+# ${voffset 8}
+# ${font HOOGE 05_53:style=Bold:size=40}${goto 720}${color2}${time %k}${voffset -9}:${voffset 9}${time %M}${color2}${voffset -16}${font HOOGE 05_53:style=Bold:size=22}${goto 895}${color2}${time %d}${font HOOGE 05_53:style=Bold:size=12}${voffset 14}${goto 890}${color #0077ff}${time %m}${goto 912}/${time %y}${font}
+##############
+# Top monitor
+##############
+${voffset -16}${goto 1250}${voffset -10}Processes: ${color0}${goto 1330} CPU${goto 1370  }RAM${goto 1420 }PID${goto 1470 }USER${color}
+${voffset -1}${goto 1250}${color0}${top name 1}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 1}${goto 1370 }${top mem 1}${goto 1420 }${top pid 1}${goto 1470 }${top user 1}${color}${font}
+${voffset -1}${goto 1250}${color0}${top name 2}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 2}${goto 1370  }${top mem 2}${goto 1420 }${top pid 2}${goto 1470 }${top user 2}${color}${font}
+${voffset -1}${goto 1250}${color0}${top name 3}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 3}${goto 1370  }${top mem 3}${goto 1420 }${top pid 3}${goto 1470 }${top user 3}${color}${font}
+${voffset -1}${goto 1250}${color0}${top name 4}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 4}${goto 1370  }${top mem 4}${goto 1420 }${top pid 4}${goto 1470 }${top user 4}${color}${font}
+${voffset -1}${goto 1250}${color0}${top name 5}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 5}${goto 1370  }${top mem 5}${goto 1420 }${top pid 5}${goto 1470 }${top user 5}${color}${font}
+${voffset -1}${goto 1250}${color0}${top name 6}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 6}${goto 1370  }${top mem 6}${goto 1420 }${top pid 6}${goto 1470 }${top user 6}${color}${font}
+${voffset -1}${goto 1250}${color0}${top name 7}${color}${font Liberation Sans:style=Bold:size=8}${color1} ${goto 1330}${top cpu 7}${goto 1370  }${top mem 7}${goto 1420 }${top pid 7}${goto 1470 }${top user 7}${color}${font}
+
+
+# |--HD
+${voffset 11}
+
+# Root
+#${voffset 4}${goto 1735}${font HOOGE 05_53:style=Bold:size=11}${color salmon}${execi 120 hddtemp /dev/nvme0n1p5 -n --unit=C}°C${color}${font}
+# Tag
+${voffset -12}${goto 1820}${font HOOGE 05_53:style=Bold:size=9}${color white}Root
+# Used rate
+${voffset 24}${goto 1747}${font HOOGE 05_53:style=Bold:size=8}${color black}${fs_used_perc /}%
+# F & U
+${voffset -39}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}F: ${color salmon}${fs_free /}${color}${font}
+${voffset 0}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}U: ${color salmon}${fs_used /}${color}${font}
+# Bar
+${voffset 29}${goto 1647}${color0}${fs_bar 32,192 }${color}${offset 10}
+# More
+${voffset 23}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color0}${fs_type /}${color}${font}${color}${font}
+${voffset 0}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color0}${fs_size /}${color}${font}${color}${font}
+
+# Data
+#${voffset 19}${goto 1730}${font HOOGE 05_53:style=Bold:size=11}${color salmon}${execi 120 hddtemp /dev/sda2 -n --unit=C}°C${color}${font}
+# Tag
+${voffset 24}${goto 1820}${font HOOGE 05_53:style=Bold:size=9}${color white}Data
+# Used rate
+${voffset 24}${goto 1747}${font HOOGE 05_53:style=Bold:size=8}${color black}${fs_used_perc /mnt/Data}%${color}${font}
+# F & U
+${voffset -37}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}F: ${color salmon}${fs_free /mnt/Data}${color}${font}
+${voffset 0}${goto 1813}${font HOOGE 05_53:style=Bold:size=9}${color white}U: ${color salmon}${fs_used /mnt/Data}${color}${font}
+# Bar
+${voffset 26}${goto 1647}${color0}${fs_bar 32,192 /mnt/Data}${color}${offset 10}
+# More
+${voffset 22}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color0}${fs_type /mnt/Data}${color}${font}${color}${font}
+${voffset 0}${goto 1822}${font HOOGE 05_53:style=Bold:size=8}${color white}${voffset -2}${color0}${fs_size /mnt/Data}${color}${font}${color}${font}
+
+
+# # |--BATTERY
+# ${voffset 194}
+# #${goto 1201}${if_existing /sys/class/power_supply/BAT0}${color0}${font ConkyColors:size=15}6${font}${color} ${voffset -6}Battery: ${font Liberation Sans:style=Bold:size=8}${color1}${battery_percent BAT0}%${color}${font}
+# #${voffset -14}${goto 1320}${color 99CCFF}${battery_bar 12,594}
 
 # |-- disks
 ${font HOOGE 05_53:style=Bold:size=9}
-${voffset 0  }${goto 1730}${color white}${diskio_read  /dev/nvme0n1p5}
+${voffset -426  }${goto 1730}${color white}${diskio_read  /dev/nvme0n1p5}
 ${voffset -2 }${goto 1740}${color white}${diskio_write /dev/nvme0n1p5}
 ${voffset 92}${goto 1647}${color white}${diskiograph_read  /dev/nvme0n1p5 15,103 white}
 ${voffset 0 }${goto 1647}${color white}${diskiograph_write /dev/nvme0n1p5 15,103 white}
 
-${voffset 39}${goto 1730}${color white}${diskio_read  /dev/sda2}
+${voffset 11}${goto 1730}${color white}${diskio_read  /dev/sda2}
 ${voffset -1}${goto 1740}${color white}${diskio_write /dev/sda2}
 ${voffset 92}${goto 1647}${color white}${diskiograph_read  /dev/sda2 15,103 white}
 ${voffset 0 }${goto 1647}${color white}${diskiograph_write /dev/sda2 15,103 white}
 
-# |--NetWork
-#${voffset 1}${voffset -48}${goto 8}${nvidiabar  50,216  gpufreqmin 1E90FF 0084C8}${color}
-${voffset 231}
+# |-- Weather
+${voffset 20}
+${font Dejavu Sans Mono:size=12}${color white}${execpi 300 curl wttr.in/Urbana?T0 --silent --max-time 3| sed 's/^/${goto 1647}/;s/Weather/  Weather/'}${font ubuntu:size=10.5}
 
-${voffset 0 }${goto 1210}${color black}${font HOOGE 05_53:style=Bold:size=9}IP: ${execi 30 ifconfig| grep -A 1 wlp| grep inet| awk '{print $2}'}
-${voffset 28}${goto 1201}${color #0077ff}${upspeedgraph eno2 48,605 104E8B 0077ff}
-${voffset -1 }${goto 1201}${color #0077ff}${downspeedgraph eno2 48,605 104E8B 0077ff}
+# |--NetWork
+${voffset 16}
+
+${voffset 0 }${goto 1210}${color black}${font HOOGE 05_53:style=Bold:size=9}IP: ${execi 30 ifconfig| grep -A 1 vpn0| grep inet| awk '{print $2}'}
+${voffset 28}${goto 1201}${color #0077ff}${upspeedgraph eno2 49,606 104E8B 0077ff}
+${voffset -2}${goto 1201}${color #0077ff}${downspeedgraph eno2 49,606 104E8B 0077ff}
 ${voffset -119 }${goto 1818}${color0}${font HOOGE 05_53:style=Bold:size=9}Up:
 ${goto 1818}$color${font HOOGE 05_53:style=Bold:size=9}${upspeed eno2}
 ${goto 1818}$color${totalup eno2} 
@@ -95,18 +255,19 @@ ${goto 1818}$color${totaldown eno2}
 ## Nvidia
 ##########
 
-#${voffset 1}${voffset -48}${goto 8}${nvidiabar 50,216 gpuutil 0}${color}
+${voffset -306}${goto 716}${nvidiabar 33,320 gpuutil 0}${color}
+${voffset 22}${goto 716}${nvidiabar 33,320 gpuutil 1}${color}
 
-${voffset -356}
+${voffset -161}
 
-${voffset 0  }${goto 716}${color #0077ff}${nvidiagraph gpuutil 32,320 0}
-${voffset -12}${goto 716}${color #0077ff}${nvidiagraph memutil 32,320 0}
-${voffset -12}${goto 716}${color #0077ff}${nvidiagraph gpuutil 32,320 1}
-${voffset -12}${goto 716}${color #0077ff}${nvidiagraph memutil 32,320 1}
-${voffset -145}${goto 720}${color white}${nvidia modelname} GPU1                 UTIL
-${voffset 20}${goto 720}${color white}MEM: ${nvidia memfree 0}/${nvidia memmax 0}MiB
-${voffset 20}${goto 720}${color white}${nvidia modelname} GPU2                 UTIL
-${voffset 20}${goto 720}${color white}MEM: ${nvidia memfree 1}/${nvidia memmax 1}MiB
+${voffset 0 }${goto 716}${color #0077ff}${nvidiagraph gpuutil 33,320 0}
+${voffset -11}${goto 716}${color #0077ff}${nvidiagraph memutil 32,320 0}
+${voffset -11}${goto 716}${color #0077ff}${nvidiagraph gpuutil 32,320 1}
+${voffset -11}${goto 716}${color #0077ff}${nvidiagraph memutil 32,320 1}
+${voffset -145}${goto 720}${color black}${nvidia modelname} GPU1                 UTIL
+${voffset 20}${goto 720}${color black}MEM: ${nvidia memfree 0}/${nvidia memmax 0}MiB
+${voffset 20}${goto 720}${color black}${nvidia modelname} GPU2                 UTIL
+${voffset 20}${goto 720}${color black}MEM: ${nvidia memfree 1}/${nvidia memmax 1}MiB
 # tmp and fan
 ${voffset -137}
 ${voffset 23}${goto 1093}${color white}TMP: ${color salmon}${nvidia gputemp 0}°C
@@ -116,26 +277,4 @@ ${voffset 0 }${goto 1093}${color white}FRQ: ${nvidia gpufreqcur 1}
 
 ${voffset -10}${goto 1093}${color white}FRQ MAX:
 ${voffset 0 }${goto 1140}${color white}${nvidia gpufreqmax 0}
-#${voffset -145}${goto 720}${color white}${nvidia modelname}0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK_INFO.png -p 1195,845 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,915 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,977 }
-
-
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/GPU.png -p 705,730 -s 480x320}
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/Nvidia2.png -p 1105,735 -s 40x25}
