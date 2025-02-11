@@ -57,39 +57,39 @@ TEXT
 # - SYSTEM - #
 ##############
 
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK_INFO.png -p 1195,845 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,915 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,977 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/GPU.png -p 705,730 -s 480x320}
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/Nvidia2.png -p 1105,735 -s 40x25}
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/NETWORK_INFO.png -p 1195,845 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,915 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/NETWORK2.png -p 1195,977 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/GPU.png -p 705,730 -s 480x320}
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/Nvidia2.png -p 1105,735 -s 40x25}
 
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,0 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 225,0 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,60 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,107 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 225,107 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,167 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,214 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 225,214 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,274 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,321 -s 583x88}
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 350,0 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,0 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,61 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 350,107 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,107 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,168 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 350,214 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,214 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,275 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,321 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,382 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/RAM_SWAP.png -p 0,427 -s 692x140}
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/GRID.png -p 0,580 -s 692x500 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/GPU.png -p 710,0 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/Nvida_log.png # -p 821,15  -s 50x40 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/ZONES.png -p 960,0 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/OVERALL_INTERFACE.png -p 1530,0 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/HDD2.png -p 1630,225 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/HDD2.png -p 1630,430 }
-${image  /home/yiran/Github/Conky_sifi_theme/Resorse/RADAR.png -p 1640,640 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,0 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 225,0 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,60 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,107 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 225,107 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,167 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,214 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 225,214 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 241,274 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 0,321 -s 583x88}
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 350,0 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,0 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,61 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 350,107 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,107 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,168 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INTERFACE.png -p 350,214 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,214 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,275 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_INFO_PANEL.png -p 575,321 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/CPU_TEMPERATURE_GRAPH.png -p 591,382 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/RAM_SWAP.png -p 0,427 -s 692x140}
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/GRID.png -p 0,580 -s 692x500 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/GPU.png -p 710,0 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/Nvida_log.png # -p 821,15  -s 50x40 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/ZONES.png -p 960,0 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/OVERALL_INTERFACE.png -p 1530,0 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/HDD2.png -p 1630,225 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/HDD2.png -p 1630,430 }
+${image  /home/wenkanl2/Software/Conky_sifi_theme/Resorse/RADAR.png -p 1640,640 }
